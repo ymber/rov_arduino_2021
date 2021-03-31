@@ -3,7 +3,7 @@
 #include <MsgPack.h>
 
 Communication::Communication(){
-  // reserve 2000 bytes for the inputString:
+  // reserve 200 bytes for the inputString:
   inputString.reserve(200);
 }
 
