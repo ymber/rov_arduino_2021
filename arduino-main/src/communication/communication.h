@@ -18,7 +18,6 @@ class Communication{
   private:
     String key[ELEMENTCOUNT];
     String value[ELEMENTCOUNT];
-    int currentPosition; // value of next free space
     bool stringComplete = false;  // whether a full JSON string has been received
     String inputString = "";         // a String to hold incoming data
     String statusKey = "S_";
@@ -47,11 +46,6 @@ class Communication{
       The latest JSON string read from the serial port
     */
     String getInputString();
-  
-    /*
-      Increment currentValue and send all values if buffer is full
-    */
-    void incrementPosition();
 
     /*
       Buffer a key:value pair to be sent to the Pi

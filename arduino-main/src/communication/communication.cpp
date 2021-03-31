@@ -3,7 +3,6 @@
 #include <MsgPack.h>
 
 Communication::Communication(){
-  currentPosition = 0;
   // reserve 2000 bytes for the inputString:
   inputString.reserve(200);
 }
@@ -22,14 +21,6 @@ void Communication::setInputString(String inputStr){
 
 String Communication::getInputString(){
   return inputString;
-}
-
-void Communication::incrementPosition(){
-  currentPosition++;
-  if(currentPosition>=ELEMENTCOUNT){
-    sendAll();
-    currentPosition = 0;
-  }
 }
 
 void Communication::bufferValue(String device, String incomingValue){
